@@ -1,15 +1,26 @@
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import AboutScreen from "./screens/AboutScreen";
+import SignIn from "./screens/SignIn";
+import SignUp from "./screens/SignUp";
+import ProjectsScreen from "./screens/ProjectsScreen";
+import DashboardScreen from "./screens/DashboardScreen";
 
 function App() {
-
-
   return (
     <>
-     
-      <h1 className="text-3xl text-red-700">Marilyne</h1>
-   
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/about" element={<AboutScreen />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/dashboard" element={<DashboardScreen />} />
+          <Route path="/projects" element={<ProjectsScreen />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
