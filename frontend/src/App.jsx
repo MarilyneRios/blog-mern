@@ -5,10 +5,12 @@ import SignIn from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
 import ProjectsScreen from "./screens/ProjectsScreen";
 import DashboardScreen from "./screens/DashboardScreen";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
+    <Header/>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeScreen />} />
