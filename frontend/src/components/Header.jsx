@@ -5,7 +5,7 @@ import Logo from '../assets/logoDevBlue.png';
 
 export default function Header() {
   return (
-    <Navbar fluid rounded className='bg-gray-600'>
+    <Navbar fluid  className='bg-gray-600'>
       <Navbar.Brand href="/">
         <img src={Logo} className="mr-3 sm:h-9 rounded w-9 h-9" alt="Flowbite React Logo" />
         <span className="px-2 py-1 bg-gradient-to-r from-cyan-800 via-cyan-600 to-cyan-800 rounded-lg text-white">
