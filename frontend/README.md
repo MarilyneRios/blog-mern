@@ -48,18 +48,12 @@ tout effacer puis coller :
 
 ## 9/ index.html :
 
-<!doctype html>
-<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marilyne blog</title>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+
 
 ## 10/ créer un dossier screens dans src
 
@@ -70,32 +64,18 @@ AboutScrenen, DashboardScreen, HomeScreen, ProjectScreen, SignIn, SignUp en jsx
 
 ### dans App.jsx :
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomeScreen from "./screens/HomeScreen";
-import AboutScreen from "./screens/AboutScreen";
-import SignIn from "./screens/SignIn";
-import SignUp from "./screens/SignUp";
-import ProjectsScreen from "./screens/ProjectsScreen";
-import DashboardScreen from "./screens/DashboardScreen";
 
-function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomeScreen />} />
-          <Route path="/about" element={<AboutScreen />} />
-          <Route path="/sign-in" element={<SignIn />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/dashboard" element={<DashboardScreen />} />
-          <Route path="/projects" element={<ProjectsScreen />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  );
-}
-
-export default App;
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomeScreen />} />
+      <Route path="/about" element={<AboutScreen />} />
+      <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/sign-up" element={<SignUp />} />
+      <Route path="/dashboard" element={<DashboardScreen />} />
+      <Route path="/projects" element={<ProjectsScreen />} />
+    </Routes>
+  </BrowserRouter>
+ 
 
 ## 13/ créer un dossier components et le fichier Header.jsx
 
