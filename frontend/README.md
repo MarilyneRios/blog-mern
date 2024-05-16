@@ -69,7 +69,7 @@ AboutScrenen, DashboardScreen, HomeScreen, ProjectScreen, SignIn, SignUp en jsx
 ## 12/ npm install react-router-dom
 
 ### dans App.jsx :
-////////////////////////////////////////////////////////////////
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import AboutScreen from "./screens/AboutScreen";
@@ -96,7 +96,6 @@ function App() {
 }
 
 export default App;
-////////////////////////////////////////////////////////////////
 
 ## 13/ créer un dossier components et le fichier Header.jsx
 
@@ -104,7 +103,7 @@ export default App;
 
 faites bien attention de mettre votre Header entre les balises BrowserRoutes, 
 sinon il ne sera pas pris en compte par react-dom-router
-//////////////////////////////////////////////////////////////////////
+
   <BrowserRouter>
       <Header />
       <Routes>
@@ -116,7 +115,7 @@ sinon il ne sera pas pris en compte par react-dom-router
           <Route path="/projects" element={<ProjectsScreen />} />
       </Routes>
   </BrowserRouter>
-///////////////////////////////////////////////////////////////////////////////////
+
 ## 15/ https://flowbite-react.com/
 
 Une bibliothèque de composants UI open source construite sur le dessus de Tailwind CSS avec des composants React et basée sur le système de conception Flowbite.
@@ -150,7 +149,7 @@ module.exports = {
    - 4/ Boutons : de connexion et Toggle qui est visible seulement sur les petits écrans
 
    useLocation pour les lien active => const path = useLocation().pathname; //pour active link
-/////////////////////////////////////////////////////////////////////////
+
     <Navbar fluid className="bg-gray-500 border-b-2 ">
       <Navbar.Brand
         href="/"
@@ -214,4 +213,3 @@ module.exports = {
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
-/////////////////////////////////////////////////////////////////////////
