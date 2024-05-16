@@ -1,39 +1,81 @@
-import React from 'react';
-import { Button, Navbar } from 'flowbite-react';
-import { AiOutlineSearch } from 'react-icons/ai';
-import Logo from '../assets/logoDevBlue.png';
+import { Button, Navbar, TextInput } from "flowbite-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AiOutlineSearch } from "react-icons/ai";
+import { FaMoon } from "react-icons/fa";
+import Logo from "../assets/logoDevBlue.png";
 
 export default function Header() {
+  const path = useLocation().pathname; //pour active link
+
   return (
-    <Navbar fluid  className='bg-gray-600'>
-      <Navbar.Brand href="/">
-        <img src={Logo} className="mr-3 sm:h-9 rounded w-9 h-9" alt="Flowbite React Logo" />
-        <span className="px-2 py-1 bg-gradient-to-r from-cyan-800 via-cyan-600 to-cyan-800 rounded-lg text-white">
+    <Navbar fluid className="bg-gray-500 border-b-2 ">
+      <Navbar.Brand
+        href="/"
+        className="self-center whitespace-nowrap text-sm sm:text-xl"
+      >
+        <img
+          src={Logo}
+          className="mr-5 h-9 w-9 sm:h-9 sm:w-9 md:h-12 md:w-12 rounded"
+          alt="My logo"
+        />
+        <span className=" p-3 bg-gradient-to-r from-cyan-700 via-cyan-500 to-cyan-700 rounded-lg text-white">
           Marilyne Blog
         </span>
       </Navbar.Brand>
 
-      <Navbar.Collapse>
-        <a href="#" className="text-white hover:text-blue-500">Accueil</a>
-        <a href="#" className="text-white hover:text-blue-500">A propos</a>
-        <a href="#" className="text-white hover:text-blue-500">Articles</a>
-        <a href="#" className="text-white hover:text-blue-500">Projets</a>
-      </Navbar.Collapse>
-
-      {/* Ajoutez le champ de recherche ici */}
-      <div className="flex items-center space-x-2 md:order-2">
-        <input
+      {/* Rechercher: champ de saisie ou btn */}
+      <form>
+        <TextInput
           type="text"
           placeholder="Rechercher..."
-          className="px-2 py-1 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:border-blue-500"
+          rightIcon={AiOutlineSearch}
+          className="p-3 rounded-lg border-none shadow-none focus:outline-none focus:ring focus:border-cyan-500 hidden lg:inline"
         />
-        <AiOutlineSearch className="text-white" size={30}/>
+      </form>
+      <Button
+        className="w-12 h-10 lg:hidden border border-white bg-gray-500"
+        pill
+      >
+        <AiOutlineSearch className="text-white" size={20} />
+      </Button>
+
+      {/* Ajoutez les btns dark mode et connexion*/}
+
+      <div className="flex gap-2 md:order-2 text-sm sm:text-xl ">
+        <Button
+          className="w-12 h-10 hidden lg:inline border border-white bg-gray-500"
+          pill
+        >
+          <FaMoon />
+        </Button>
+
+        <Link to="/sign-in">
+          <Button className="border-2 border-white text-white bg-gray-500 hover:bg-cyan-700">
+            Connexion
+          </Button>
+        </Link>
+
+        <Navbar.Toggle className="mx-3 p-2 border-2 border-white text-white bg-gray-500 hover:bg-cyan-700 rounded" />
       </div>
 
-      <div className="flex md:order-3 ">
-        <Button>Connexion</Button>
-        <Navbar.Toggle />
-      </div>
+      {/* Les liens*/}
+      <Navbar.Collapse className="self-center whitespace-nowrap mb-1">
+        <Navbar.Link active={path === "/"} as={"div"}>
+          <Link to="/" className="text-white text-md lg:text-xl">
+            Accueil
+          </Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === "/about"} as={"div"}>
+          <Link to="/about" className="text-white text-md lg:text-xl">
+            A propos
+          </Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === "/projects"} as={"div"}>
+          <Link to="/projects" className="text-white text-md lg:text-xl">
+            Projets
+          </Link>
+        </Navbar.Link>
+      </Navbar.Collapse>
     </Navbar>
   );
 }

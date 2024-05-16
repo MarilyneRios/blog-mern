@@ -10,8 +10,9 @@ import Header from "./components/Header";
 function App() {
   return (
     <>
-      <Header />
+    
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/about" element={<AboutScreen />} />
