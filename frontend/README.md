@@ -22,7 +22,7 @@ Dans le dossier frontend: **npm run dev** pour lancer le front
  ### 5.2/ npx tailwindcss init -p (créer un fichier de configuration pour Tailwind CSS.)
 
  ### 5.3/ dans tailwind.config.js :
-
+```
  /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -34,7 +34,7 @@ export default {
   },
   plugins: [],
 }
-
+```
 ## 6/ dans inex.css :
 
 tout effacer puis coller :
@@ -47,13 +47,13 @@ tout effacer puis coller :
 ## 8/ Nettoyer le public et assets
 
 ## 9/ index.html :
-
+```
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marilyne blog</title>
   </head>
-
+```
 
 ## 10/ créer un dossier screens dans src
 
@@ -64,7 +64,7 @@ AboutScrenen, DashboardScreen, HomeScreen, ProjectScreen, SignIn, SignUp en jsx
 
 ### dans App.jsx :
 
-
+```
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<HomeScreen />} />
@@ -75,7 +75,7 @@ AboutScrenen, DashboardScreen, HomeScreen, ProjectScreen, SignIn, SignUp en jsx
       <Route path="/projects" element={<ProjectsScreen />} />
     </Routes>
   </BrowserRouter>
- 
+ ```
 
 ## 13/ créer un dossier components et le fichier Header.jsx
 
@@ -83,7 +83,7 @@ AboutScrenen, DashboardScreen, HomeScreen, ProjectScreen, SignIn, SignUp en jsx
 
 faites bien attention de mettre votre Header entre les balises BrowserRoutes, 
 sinon il ne sera pas pris en compte par react-dom-router
-
+```
   <BrowserRouter>
       <Header />
       <Routes>
@@ -95,7 +95,7 @@ sinon il ne sera pas pris en compte par react-dom-router
           <Route path="/projects" element={<ProjectsScreen />} />
       </Routes>
   </BrowserRouter>
-
+```
 ## 15/ https://flowbite-react.com/
 
 Une bibliothèque de composants UI open source construite sur le dessus de Tailwind CSS avec des composants React et basée sur le système de conception Flowbite.
@@ -106,7 +106,7 @@ Une bibliothèque de composants UI open source construite sur le dessus de Tailw
 npm i flowbite-react
 
   ### Add the Flowbite React content path and plugin to tailwind.config.js:
-
+```
 const flowbite = require("flowbite-react/tailwind");
 
 /** @type {import('tailwindcss').Config} */
@@ -120,7 +120,7 @@ module.exports = {
     flowbite.plugin(),
   ],
 };
-
+```
 ## 16/ Hearder
    en 4 parties: 
    - 1/ Navbar.Brand :  le logo et le nom du blog
